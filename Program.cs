@@ -8,15 +8,15 @@
             int even = 0;
             int odd = 0;
             int unique = 0;
-            for (int i = 0; i < array.Length; i++)
+            foreach (int i in array)
             {
-                if (array[i] % 2 == 1)
+                if (i % 2 == 0)
                 {
-                    odd++;
+                    even++;
                 }
                 else
                 {
-                    even++;
+                    odd++;
                 }
                 for (int j = 0; j < array.Length; j++)
                 {
