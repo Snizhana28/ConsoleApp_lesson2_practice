@@ -4,27 +4,19 @@
     {
         static void Main(string[] args)
         {
-            /*Створіть додаток, який відображає кількість значень у 
-            масиві менше заданого параметра користувачем. Наприклад, 
-            кількість значень менших, ніж 7 (7 введено користувачем 
-            з клавіатури).*/
-            int[] array = new int[10];
+            int[] array = new int[10] {1,2,3,4,5,6,7,8,9,10};
             int count = 0;
-            int number = 0;
-            for (int i = 0; i < array.Length; i++)
+            Console.Write("Enter a number : ");
+            int number = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($"The number of values in the array is less than the specified parameter {number} : ");
+            foreach (int i in array)
             {
-                array[i] = i;
-            }
-            Console.WriteLine("Enter number");
-            number = Convert.ToInt32(Console.ReadLine());
-            for (int i = 0; i < array.Length; i++)
-            {
-                if (array[i] < number)
+                if (i < number)
                 {
                     count++;
+                    Console.Write(count);
                 }
             }
-            Console.WriteLine($"Count of numbers less than {number} is {count}");
         }
     }
 }
