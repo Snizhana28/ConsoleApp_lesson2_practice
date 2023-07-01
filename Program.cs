@@ -1,4 +1,6 @@
-﻿namespace ConsoleApp_lesson2_practice
+﻿using System.Xml.Linq;
+
+namespace ConsoleApp_lesson2_practice
 {
     internal class Program
     {
@@ -7,7 +9,40 @@
             /*Дано 2 масиви розмірності M і N відповідно. Через цикл foreach.
             Необхідно переписати до третього масиву загальні 
             елементи перших двох масивів без повторень.*/
-            
+            int[] array1 = { 1, 2, 3 };
+            int[] array2 = { 4, 5, 6 , 3};
+            int[] array3 = new int[array1.Length + array2.Length];
+            int commonElementsCount = 0;
+
+            foreach (int element1 in array1)
+            {
+                foreach (int element2 in array2)
+                {
+                    if (element1 == element2)
+                    {
+                        bool duplicate = false;
+                        for (int i = 0; i < commonElementsCount; i++)
+                        {
+                            if (array3[i] == element1)
+                            {
+                                duplicate = true;
+                                break;
+                            }
+                        }
+                        if (!duplicate)
+                        {
+                            array3[commonElementsCount] = element1;
+                            commonElementsCount++;
+                        }
+                        break;
+                    }
+                }
+            }
+            Array.Resize(ref array3, commonElementsCount);
+            foreach (int i in array3)
+            {
+                Console.Write(i);
+            }
 
         }
     }
