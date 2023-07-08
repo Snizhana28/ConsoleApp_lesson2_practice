@@ -11,13 +11,10 @@
             foreach (int i in array)
             {
                 if (i % 2 == 0)
-                {
                     even++;
-                }
                 else
-                {
                     odd++;
-                }
+
                 for (int j = 0; j < array.Length; j++)
                 {
                     if (array[i] == array[j] && i != j)
