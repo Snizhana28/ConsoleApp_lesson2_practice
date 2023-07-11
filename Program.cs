@@ -2,18 +2,24 @@
 {
     internal class Program
     {
+        static int CountWords(string sentence)
+        {
+            int vowelCount = 0;
+            string vowels = "aeiouAEIOU";
+            for (int i = 0; i < sentence.Length; i++)
+            {
+                if (vowels.Contains(sentence[i]))
+                {
+                    vowelCount++;
+                }
+            }
+            return vowelCount;
+        }
         static void Main(string[] args)
         {
-            /*Користувач вводить з клавіатури речення. Додаток має 
-            підрахувати кількість голосних літер у реченні.*/
-
             Console.WriteLine("Enter a sentence : ");
             string sentence = Console.ReadLine();
-            string symbols = "aeiouAEIOU";
-           
-
-
-           
+            Console.WriteLine(CountWords(sentence));
         }
     }
 }
