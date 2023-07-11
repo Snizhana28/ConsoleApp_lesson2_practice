@@ -2,7 +2,6 @@
 
 namespace ConsoleApp_lesson2_practice
 {
-
     internal class Program
     {
         static int CountWords(string sentence)
